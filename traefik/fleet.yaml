@@ -1,8 +1,9 @@
-defaultNamespace: traefik-example
-kind: Ingress
-spec:
-  ingressClassName: traefik-example
+defaultNamespace: traefik-system
 helm:
   releaseName: traefik
   chart: traefik
   repo: https://traefik.github.io/charts
+  values:
+    ingressClass:
+      name: my-traefik
+      isDefault: false
